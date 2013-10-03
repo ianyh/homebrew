@@ -8,6 +8,7 @@ class AmethystDebug < Formula
   depends_on :xcode
 
   def install
+    system "pod install"
     system "xcodebuild -target amethyst-debug -configuration Release SYMROOT=symroot OBJROOT=objroot"
     bin.install "symroot/Release/amethyst-debug"
   end
